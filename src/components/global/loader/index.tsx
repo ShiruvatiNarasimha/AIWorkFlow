@@ -9,7 +9,7 @@ type Props = {
   color?: string;
 };
 
-const Loadder = ({ children, state, className, color }: Props) => {
+const Loader = ({ children, state, className, color }: Props) => {
   return state ? (
     <div className={cn(className)}>
       <Spinner color={color} />
@@ -19,4 +19,4 @@ const Loadder = ({ children, state, className, color }: Props) => {
   );
 };
 
-export default Loadder;
+export default Loader;
