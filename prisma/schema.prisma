@@ -30,9 +30,14 @@ model User  {
 
 
 model Subscription {
-  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  User  User?   @relation(fields: [userId],references: [id],onDelete: Cascade)
-  userId         String?  @unique  @db.Uuid
+  id                String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  User              User?               @relation(fields: [userId],references: [id],onDelete: Cascade)
+  userId            String?             @unique  @db.Uuid
+  createdAt         DateTime            @default(now())
+  plan              SUBSCRIPTION_PLAN   @default(FREE)
+  updatedAt         DateTime            @default(now())
+  customerId        String?
+
 
 }
 
@@ -40,11 +45,11 @@ model Subscription {
 
 model Automation {
     id               String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-    name             String           @default("Untitled")
-    createdAt        DateTime         @default(now())
-    active           Boolean          @default(false)
-    User User?                      @relation(fields: [userId],references: [id], onDelete: Cascade)
-    userId           String         @unique @db.Uuid
+    name             String            @default("Untitled")
+    createdAt        DateTime          @default(now())
+    active           Boolean           @default(false)
+    User User?                         @relation(fields: [userId],references: [id], onDelete: Cascade)
+    userId           String            @unique @db.Uuid
     keywords         Keyword[]
     dms              Dms[]
     posts            Post[]
@@ -66,15 +71,15 @@ model Integrations {
     userId              String?           @db.Uuid
     token               String            @unique
     expiresAt           DateTime?
-    instagramId         String             @unique
+    instagramId         String            @unique
 
 }
 
 model Dms {
-  id           String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  Automation   Automation? @relation(fields: [automationId], references: [id])
-  automationId String?     @db.Uuid
-  createdAt    DateTime    @default(now())
+  id           String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  Automation   Automation?               @relation(fields: [automationId], references: [id])
+  automationId String?                   @db.Uuid
+  createdAt    DateTime                  @default(now())
   senderId     String?
   reciever     String?
   message      String?
@@ -131,4 +136,10 @@ enum   MEDIATYPE {
 enum  LISTENERS {
   SMARTAI
   MESSAGE
+}
+
+
+enum SUBSCRIPTION_PLAN {
+  FREE
+  PRO
 }
