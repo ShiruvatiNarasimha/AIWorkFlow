@@ -40,7 +40,7 @@ export default function Home() {
   ];
   return (
     <main>
-      <section className="relative bg-gradient-to-b from-slate-900 via-blue-900 to-bg">
+      <section className="relative bg-gradient-to-b from-slate-900 via-black to-bg">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         <div className="relative">
           <div className="container px-4 py-8">
@@ -50,7 +50,7 @@ export default function Home() {
                   li
                 </div>
                 <span className="text-xl font-semibold text-primary-foreground">
-                  Slide
+                  Automation.ai
                 </span>
               </div>
               <nav className="hidden space-x-6 text-sm text-blue-200 md:block">
@@ -58,20 +58,19 @@ export default function Home() {
                 <Link href="#pricing">Pricing</Link>
                 <Link href="#about">About</Link>
               </nav>
-              <Button className="bg-white text-primary">
+              <Button className="bg-white text-primary ">
                 <Link href="/dashboard">Login</Link>
               </Button>
             </div>
 
             <div className="mx-auto mt-16 max-w-3xl text-center">
               <h1 className="text-4xl font-bold leading-tight tracking-tighter text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                Transform Your Instagram Engagement with Slide
+                Revolutionize Your Instagram Automation with AI
               </h1>
 
               <p className="mt-6 text-lg text-blue-200">
-                Slide revolutionizes how you connect with your audience on
-                Instagram. Automate responses and boost engagement effortlessly,
-                turning interactions into valuable business opportunities.
+                Effortlessly Automate Instagram Interactions and Unlock Business
+                Potential with Slide
               </p>
 
               <div className="mt-8 flex justify-center gap-4">
@@ -101,14 +100,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="container w-full py-12 md:py-24 lg:py-32 bg-background">
+      <section className=" w-full py-12 md:py-24 lg:py-32 relative bg-gradient-to-b from-slate-900 via-black to-bg">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+            <h2 className="text-3xl font-bold text-white tracking-tighter sm:text-5xl">
               Choose Your Plan
             </h2>
             <p className="max-w-[900px] text-muted-foreground">
-              Select the perfect plan to boost your Instagram engagement
+              Select the perfect plan to boost your Instagram Automation AI
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 md:gap-8">
