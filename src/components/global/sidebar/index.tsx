@@ -3,6 +3,7 @@
 import { usePaths } from "@/hooks/user-nav";
 import { LogoSmall } from "@/svgs/logo-small";
 import React from "react";
+import Items from "./items";
 
 type Props = {
   slug: string;
@@ -44,6 +45,9 @@ const Sidebar = ({ slug }: Props) => {
       >
         <div className="flex gap-x-2 items-center p-5 justify-center">
           <LogoSmall />
+        </div>
+        <div className="flex flex-col py-3">
+          <Items page={page} slug={slug} />
         </div>
       </div>
     </div>
