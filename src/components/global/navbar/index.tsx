@@ -14,6 +14,7 @@ import { Separator } from "@/components/ui/separator";
 import { LogoSmall } from "@/svgs/logo-small";
 import CreateAutomation from "../createAutomation";
 import Search from "./search";
+import { Notifications } from "./notifications";
 
 type Props = {
   slug: string;
@@ -74,6 +75,7 @@ const Navbar = ({ slug }: Props) => {
           </span>
           <Search />
           <CreateAutomation />
+          <Notifications />
         </div>
       </div>
     )
