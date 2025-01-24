@@ -52,7 +52,7 @@ const PaymentCard = ({ label, current, landing }: Props) => {
         )}
         {label === "PRO" ? (
           <p className="mb-2">
-            <b className="text-xl">$99</b>/month
+            <b className="text-xl text-white">$99/month</b>
           </p>
         ) : (
           <p className="text-xl mb-2 text-white">Free</p>
@@ -82,7 +82,7 @@ const PaymentCard = ({ label, current, landing }: Props) => {
           </Button>
         ) : (
           <Button
-            className="rounded-full mt-5 bg-background-80 text-white hover:text-background-80"
+            className="rounded-full mt-5 bg-background-80 text-white hover:text-white"
             disabled={label === current}
           >
             {label === current
