@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import React from "react";
 
 type Props = {
@@ -17,12 +18,18 @@ const GradientButton = ({ children, type, href, className }: Props) => {
     case "BUTTON":
       return (
         <div className={gradient}>
-          <Button className={cn(className, "rounded-xl")}></Button>
+          <Button className={cn(className, "rounded-xl")}>{children}</Button>
         </div>
       );
 
     case "LINK":
-      return <div className={gradient}></div>;
+      return (
+        <div className={gradient}>
+          <Link href={href!} className={cn(className, "rounded-xl")}>
+            {children}
+          </Link>
+        </div>
+      );
 
     default:
       return null;

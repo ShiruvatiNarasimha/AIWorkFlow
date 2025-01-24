@@ -3,9 +3,9 @@
 import { usePaths } from "@/hooks/user-nav";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React from "react";
 import GradientButton from "../gradient-button";
+import { Button } from "@/components/ui/button";
 
 type Props = {};
 
@@ -53,6 +53,9 @@ const AutomationList = (props: Props) => {
           >
             Smart AI
           </GradientButton>
+          <Button className="bg-background-80 text-white hover:bg-background-80">
+            Standaed
+          </Button>
         </div>
       </Link>
     </div>
