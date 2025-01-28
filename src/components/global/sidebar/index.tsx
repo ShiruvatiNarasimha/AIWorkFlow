@@ -1,7 +1,7 @@
 "use client";
 
 import { usePaths } from "@/hooks/user-nav";
-import { LogoSmall } from "@/svgs/logo-small";
+// import { LogoSmall } from "@/svgs/logo-small";
 import React from "react";
 import Items from "./items";
 import { Separator } from "@/components/ui/separator";
@@ -49,7 +49,7 @@ const Sidebar = ({ slug }: Props) => {
            backdrop-blur-3xl"
       >
         <div className="flex gap-x-2 items-center p-5 justify-center">
-          <LogoSmall />
+          {/* <LogoSmall /> */}
         </div>
         <div className="flex flex-col py-3 text-white">
           <Items page={page} slug={slug} />
