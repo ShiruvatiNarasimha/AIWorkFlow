@@ -26,7 +26,7 @@ export const onBoardUser = async () => {
         if (days < 5) {
           console.log("refresh");
 
-          const refresh = await refreshToken(found.integrations[0]);
+          const refresh = await refreshToken(found.integrations[0].token);
         }
       }
     }
