@@ -13,73 +13,58 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-model User  {
-   id               String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-   clerkid          String              @unique
-   email            String              @unique
-   firstame         String?             @unique
-   lastname         String?             @unique
-   createdAt        DateTime            @default(now())
-   subscription     Subscription?
-   automation       Automation[]
-   integation       Integrations[]
-
+model User {
+  id           String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  clerkId      String         @unique
+  email        String         @unique
+  firstname    String?        @unique
+  lastname     String?        @unique
+  createdAt    DateTime       @default(now())
+  subscription Subscription?
+  integrations Integrations[]
+  automations  Automation[]
 }
-
-
 
 model Subscription {
-  id                String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  User              User?               @relation(fields: [userId],references: [id],onDelete: Cascade)
-  userId            String?             @unique  @db.Uuid
-  createdAt         DateTime            @default(now())
-  plan              SUBSCRIPTION_PLAN   @default(FREE)
-  updatedAt         DateTime            @default(now())
-  customerId        String?
-
-
+  id         String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  User       User?             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String?           @unique @db.Uuid
+  createdAt  DateTime          @default(now())
+  plan       SUBSCRIPTION_PLAN @default(FREE)
+  updatedAt  DateTime          @default(now())
+  customerId String?           @unique
 }
-
-
-
-model Automation {
-    id               String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-    name             String            @default("Untitled")
-    createdAt        DateTime          @default(now())
-    active           Boolean           @default(false)
-    User User?                         @relation(fields: [userId],references: [id], onDelete: Cascade)
-    userId           String            @unique @db.Uuid
-    keywords         Keyword[]
-    dms              Dms[]
-    posts            Post[]
-    listener         Listener?
-    trigger          Trigger[]
-
-
-
-
-
-}
-
 
 model Integrations {
-    id                  String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-    name                INTEGRATIONS      @default(INSTAGRAM)
-    createdAt           DateTime          @default(now())
-    User                User?             @relation(fields: [userId], references: [id], onDelete: Cascade)
-    userId              String?           @db.Uuid
-    token               String            @unique
-    expiresAt           DateTime?
-    instagramId         String            @unique
+  id          String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        INTEGRATIONS @default(INSTAGRAM)
+  createdAt   DateTime     @default(now())
+  User        User?        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String?      @db.Uuid
+  token       String       @unique
+  expiresAt   DateTime?
+  instagramId String?      @unique
+}
 
+model Automation {
+  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name      String    @default("Untitled")
+  createdAt DateTime  @default(now())
+  active    Boolean   @default(false)
+  trigger   Trigger[]
+  listener  Listener?
+  posts     Post[]
+  dms       Dms[]
+  User      User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String?   @db.Uuid
+  keywords  Keyword[]
 }
 
 model Dms {
-  id           String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  Automation   Automation?               @relation(fields: [automationId], references: [id])
-  automationId String?                   @db.Uuid
-  createdAt    DateTime                  @default(now())
+  id           String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  Automation   Automation? @relation(fields: [automationId], references: [id])
+  automationId String?     @db.Uuid
+  createdAt    DateTime    @default(now())
   senderId     String?
   reciever     String?
   message      String?
@@ -122,24 +107,22 @@ model Keyword {
   @@unique([automationId, word]) //this constraints ensure user cant use the same keyword on multiple automations
 }
 
+enum SUBSCRIPTION_PLAN {
+  PRO
+  FREE
+}
+
 enum INTEGRATIONS {
   INSTAGRAM
 }
 
-enum   MEDIATYPE {
+enum MEDIATYPE {
   IMAGE
   VIDEO
   CAROSEL_ALBUM
 }
 
-
-enum  LISTENERS {
+enum LISTENERS {
   SMARTAI
   MESSAGE
-}
-
-
-enum SUBSCRIPTION_PLAN {
-  FREE
-  PRO
 }
