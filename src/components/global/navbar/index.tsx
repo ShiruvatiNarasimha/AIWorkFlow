@@ -12,7 +12,7 @@ import { HelpDuoToneWhite } from "@/icons";
 import UpgradeCard from "../sidebar/upgrade";
 import { Separator } from "@/components/ui/separator";
 import { LogoSmall } from "@/svgs/logo-small";
-import CreateAutomation from "../createAutomation";
+import CreateAutomation from "../create-automation";
 import Search from "./search";
 import { Notifications } from "./notifications";
 import MainBreadCrumb from "../bread-crumbs/main-bread-crumb";

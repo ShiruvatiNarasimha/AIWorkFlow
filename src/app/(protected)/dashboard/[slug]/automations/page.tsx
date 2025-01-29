@@ -1,5 +1,5 @@
 import AutomationList from "@/components/global/automation-list";
-import CreateAutomation from "@/components/global/createAutomation";
+import CreateAutomation from "@/components/global/create-automation";
 import { Check } from "lucide-react";
 import React from "react";
 
