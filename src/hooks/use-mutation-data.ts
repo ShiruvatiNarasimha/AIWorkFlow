@@ -24,7 +24,7 @@ export const useMutationData = (
       });
     },
     onSettled: async () => {
-      return await client.invalidateQueries({ queryKey: [queryKey] });
+      await client.invalidateQueries({ queryKey: [queryKey] });
     },
   });
 
@@ -41,6 +41,7 @@ export const useMutationDataState = (mutationKey: MutationKey) => {
       };
     },
   });
+
   const latestVariable = data[data.length - 1];
   return { latestVariable };
 };

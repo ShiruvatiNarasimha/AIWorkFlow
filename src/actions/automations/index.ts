@@ -1,13 +1,14 @@
 " use server ";
 
 import { onCurrentUser } from "../user";
-import { CreateAutomation, getAutomations } from "./queries";
+import { createAutomation, getAutomations } from "./queries";
 
-export const createAutomations = async () => {
+export const createAutomations = async (id?: string) => {
   const user = await onCurrentUser();
   try {
-    const create = await CreateAutomation(user.id);
-    if (create) return { status: 200, data: "Automatio created" };
+    const create = await createAutomation(user.id, id);
+    if (create) return { status: 200, data: "Automation created", res: create };
+
     return { status: 404, data: "Oops! something went wrong" };
   } catch (error) {
     return { status: 500, data: "Internal server error" };
@@ -24,3 +25,15 @@ export const getAllAutomations = async () => {
     return { status: 500, data: [] };
   }
 };
+
+// export const getAutomationInfo = async (id: string) => {
+//   await onCurrentUser()
+//   try {
+//     const automation = await findAutomation(id)
+//     if (automation) return { status: 200, data: automation }
+
+//     return { status: 404 }
+//   } catch (error) {
+//     return { status: 500 }
+//   }
+// }
