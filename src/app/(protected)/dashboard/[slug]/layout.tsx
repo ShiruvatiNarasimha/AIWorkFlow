@@ -2,7 +2,10 @@ import { QueryClient } from "@tanstack/react-query";
 import Navbar from "@/components/global/navbar";
 import Sidebar from "@/components/global/sidebar";
 import React from "react";
-import { PrefetchUserProfile } from "@/react-query/prefetch";
+import {
+  PrefetchUserAutomations,
+  PrefetchUserProfile,
+} from "@/react-query/prefetch";
 
 type Props = {
   children: React.ReactNode;
