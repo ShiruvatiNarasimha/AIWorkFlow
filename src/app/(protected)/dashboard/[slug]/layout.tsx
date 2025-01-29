@@ -1,4 +1,8 @@
-import { QueryClient } from "@tanstack/react-query";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
 import Navbar from "@/components/global/navbar";
 import Sidebar from "@/components/global/sidebar";
 import React from "react";
@@ -17,13 +21,15 @@ const Layout = async ({ children, params }: Props) => {
   await PrefetchUserProfile(query);
   await PrefetchUserAutomations(query);
   return (
-    <div className="p-3">
-      <Sidebar slug={params.slug} />
-      <div className="lg:ml-[250px] lg:pl-10 lg:py-5 flex flex-col overflow-auto">
-        <Navbar slug={params.slug} />
-        {children}
+    <HydrationBoundary state={dehydrate(query)}>
+      <div className="p-3">
+        <Sidebar slug={params.slug} />
+        <div className="lg:ml-[250px] lg:pl-10 lg:py-5 flex flex-col overflow-auto">
+          <Navbar slug={params.slug} />
+          {children}
+        </div>
       </div>
-    </div>
+    </HydrationBoundary>
   );
 };
 

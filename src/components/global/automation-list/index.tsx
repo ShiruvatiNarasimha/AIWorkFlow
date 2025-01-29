@@ -6,11 +6,17 @@ import Link from "next/link";
 import React from "react";
 import GradientButton from "../gradient-button";
 import { Button } from "@/components/ui/button";
+import { useQueryAutomations } from "@/hooks/user-queries";
 
 type Props = {};
 
 const AutomationList = (props: Props) => {
+  //WIP: Get the automation list data
+  const { data } = useQueryAutomations();
+
   const { pathname } = usePaths();
+
+  // WIP: If no Automations exist show no Automations
   return (
     <div className="flex flex-col gap-y-3">
       <Link

@@ -3,7 +3,7 @@
 import { onCurrentUser } from "../user";
 import { CreateAutomation } from "./queries";
 
-export const getAllAutomations = async () => {
+export const createAutomations = async () => {
   const user = await onCurrentUser();
   try {
     const create = await CreateAutomation(user.id);
