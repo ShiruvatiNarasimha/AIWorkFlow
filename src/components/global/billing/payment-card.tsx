@@ -10,7 +10,7 @@ type Props = {
   landing?: boolean;
 };
 
-const PaymentCard = ({ label, current, landing }: Props) => {
+const PaymentCard = ({ current, label, landing }: Props) => {
   return (
     <div
       className={cn(
@@ -32,7 +32,7 @@ const PaymentCard = ({ label, current, landing }: Props) => {
             {label === "FREE" && "Standard"}
           </h2>
         ) : (
-          <h2 className="text-2xl text-white">
+          <h2 className="text-2xl">
             {label === current
               ? "Your Current Plan"
               : current === "PRO"
@@ -52,10 +52,10 @@ const PaymentCard = ({ label, current, landing }: Props) => {
         )}
         {label === "PRO" ? (
           <p className="mb-2">
-            <b className="text-xl text-white">$99/month</b>
+            <b className="text-xl">$99</b>/month
           </p>
         ) : (
-          <p className="text-xl mb-2 text-white">Free</p>
+          <p className="text-xl mb-2">Free</p>
         )}
 
         {PLANS[label === "PRO" ? 1 : 0].features.map((i) => (
@@ -82,7 +82,7 @@ const PaymentCard = ({ label, current, landing }: Props) => {
           </Button>
         ) : (
           <Button
-            className="rounded-full mt-5 bg-background-80 text-white hover:text-white"
+            className="rounded-full mt-5 bg-background-80 text-white hover:text-background-80"
             disabled={label === current}
           >
             {label === current
