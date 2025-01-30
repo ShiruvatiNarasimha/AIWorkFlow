@@ -14,6 +14,8 @@ import {
   updateAutomation,
 } from "./queries";
 
+// AutoWork flow
+
 export const createAutomations = async (id?: string) => {
   const user = await onCurrentUser();
   try {
