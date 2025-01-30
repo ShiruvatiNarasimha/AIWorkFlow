@@ -4,13 +4,13 @@ import React from "react";
 import ActiveTrigger from "./active";
 import { Separator } from "@/components/ui/separator";
 import ThenAction from "../then/then-action";
-import TriggerButton from "../trigger-button";
 import { AUTOMATION_TRIGGERS } from "@/constants/automation";
 import { useTriggers } from "@/hooks/use-automations";
 import { cn } from "@/lib/utils";
 import Keywords from "./keywords";
 import { Button } from "@/components/ui/button";
 import Loader from "../../loader";
+import TriggerButton from "../tigger-button";
 
 type Props = {
   id: string;

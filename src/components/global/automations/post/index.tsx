@@ -1,13 +1,13 @@
 import { useAutomationPosts } from "@/hooks/use-automations";
 import { useQueryAutomationPosts } from "@/hooks/user-queries";
 import React from "react";
-import TriggerButton from "../trigger-button";
 import { InstagramPostProps } from "@/types/posts.type";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Loader from "../../loader";
+import TriggerButton from "../tigger-button";
 
 type Props = {
   id: string;

@@ -1,6 +1,5 @@
 import { useListener } from "@/hooks/use-automations";
 import React from "react";
-import TriggerButton from "../trigger-button";
 import { AUTOMATION_LISTENERS } from "@/constants/automation";
 import { SubscriptionPlan } from "../../subscription-plan";
 import { cn } from "@/lib/utils";
@@ -8,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Loader from "../../loader";
+import TriggerButton from "../tigger-button";
 
 type Props = {
   id: string;

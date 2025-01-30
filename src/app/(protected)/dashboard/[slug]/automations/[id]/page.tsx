@@ -1,7 +1,7 @@
 import { getAutomationInfo } from "@/actions/automations";
 import PostNode from "@/components/global/automations/post/node";
 import ThenNode from "@/components/global/automations/then/node";
-import Trigger from "@/components/global/automations/trigger";
+import Trigger from "@/components/global/automations/tigger";
 import AutomationsBreadCrumb from "@/components/global/bread-crumbs/automations";
 import { Warning } from "@/icons";
 import { PrefetchUserAutomation } from "@/react-query/prefetch";
