@@ -9,8 +9,7 @@ const Drawer = ({
 }: React.ComponentProps<typeof DrawerPrimitive.Root>) => 
 )
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
-const DrawerContent = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Content>,
+
 
 >(({ className, children, ...props }, ref) => 
 ))
