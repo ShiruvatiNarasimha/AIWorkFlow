@@ -15,7 +15,6 @@ const Drawer = ({
   />
 )
 Drawer.displayName = "Drawer"
-const DrawerPortal = DrawerPrimitive.Portal
 
 const DrawerClose = DrawerPrimitive.Close
 
