@@ -14,8 +14,6 @@ const Drawer = ({
     {...props}
   />
 )
-Drawer.displayName = "Drawer"
-
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
