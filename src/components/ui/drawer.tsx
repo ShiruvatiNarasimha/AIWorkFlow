@@ -6,11 +6,7 @@ import * as React from "react"
 const Drawer = ({
   shouldScaleBackground = true,
   ...props
-}: React.ComponentProps<typeof DrawerPrimitive.Root>) => (
-  <DrawerPrimitive.Root
-    shouldScaleBackground={shouldScaleBackground}
-    {...props}
-  />
+}: React.ComponentProps<typeof DrawerPrimitive.Root>) => 
 )
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
 const DrawerContent = React.forwardRef<
