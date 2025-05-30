@@ -5,7 +5,7 @@ import * as React from "react"
 
 const Drawer = ({
   shouldScaleBackground = true
-  React.ElementRef<typeof DrawerPrimitive.Overlay>,
+  
 
 
 >(({ className, children, ...props }, ref) => 
