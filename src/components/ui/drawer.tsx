@@ -3,9 +3,7 @@
 import * as React from "react"
 
 
-const Drawer = ({
-  shouldScaleBackground = true
-  
+const Drawer = 
 
 
 >(({ className, children, ...props }, ref) => 
