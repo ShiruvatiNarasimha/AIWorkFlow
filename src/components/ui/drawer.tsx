@@ -26,8 +26,6 @@ const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
-  <DrawerPorta
-      {children
   </DrawerPortal>
 ))
 const DrawerHeader = ({
