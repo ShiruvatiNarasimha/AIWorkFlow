@@ -15,7 +15,7 @@ export async function GET() {
         price: priceId,
       },
     ],
-    success_url: `${process.env.NEXT_PUBLIC_HOST_URL}/payment?session_id={CHECKOUT_SESSION_ID}`
+    success_url: `$
   });
   if (session) {
     return NextResponse.json({
