@@ -13,7 +13,6 @@ export async function GET() {
     line_items: [
       {
         price: priceId,
-        quantity: 1,
       },
     ],
     success_url: `${process.env.NEXT_PUBLIC_HOST_URL}/payment?session_id={CHECKOUT_SESSION_ID}`
